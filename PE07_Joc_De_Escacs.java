@@ -7,6 +7,7 @@ public class PE07_Joc_De_Escacs {
     Scanner j = new Scanner(System.in);
     String jugadorBlanc;
     String jugadorNegre;
+    String torn = "blanc";
     public static void main(String[] args) {
     PE07_Joc_De_Escacs p = new PE07_Joc_De_Escacs();
     p.iniciarJoc();
@@ -31,10 +32,19 @@ public void demanarJugadors() {
 
 public void inicialitzarTauler() {
     crearMatriuTauler();
+    omplirTaulerBuit();
 
 }
 
 public void crearMatriuTauler() {
     tauler = new char[8][8];
 }
+
+public void omplirTaulerBuit() {
+    for (int i = 0; i < 8; i++)
+        for (int j = 0;j < 8; j++)
+            tauler[i][j] = '.';
+}
+
+
 }
