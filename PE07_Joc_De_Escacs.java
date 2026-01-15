@@ -59,6 +59,19 @@ public void colocarPecesBlanques() {
     char[] peces = {'T','C','A','Q','K','A','C','T'};
     tauler[7] = peces;
     for (int i = 0; i < 8; i++)
-        tauler[8][i] = 'P';
+        tauler[6][i] = 'P';
 }
+
+public void imprimirTauler() {
+    System.out.println("  a b c d e f g h");
+    for (int i = 0; i < 8; i++) {
+        System.out.println((8 - i) + " ");
+        for (int j = 0; j < 8; j++)
+            System.out.println(tauler[i][j] + " ");
+        System.out.println(8 - i);
+    }
+    System.out.println("  a b c d e f g h");
+}
+
+
 }
