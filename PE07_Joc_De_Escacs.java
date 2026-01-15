@@ -33,6 +33,8 @@ public void demanarJugadors() {
 public void inicialitzarTauler() {
     crearMatriuTauler();
     omplirTaulerBuit();
+    colocarPecesNegres();
+    colocarPecesBlanques();
 
 }
 
@@ -46,5 +48,17 @@ public void omplirTaulerBuit() {
             tauler[i][j] = '.';
 }
 
+public void colocarPecesNegres() {
+    char[] peces = {'t','c','a','q','k','a','c','t'};
+    tauler[0] = peces;
+    for (int i = 0; i < 8; i++)
+        tauler[1][i] = 'p';
+}
 
+public void colocarPecesBlanques() {
+    char[] peces = {'T','C','A','Q','K','A','C','T'};
+    tauler[7] = peces;
+    for (int i = 0; i < 8; i++)
+        tauler[8][i] = 'P';
+}
 }
