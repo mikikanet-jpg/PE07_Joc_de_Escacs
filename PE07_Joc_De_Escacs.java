@@ -12,6 +12,8 @@ public class PE07_Joc_De_Escacs {
     String jugadorBlanc;
     String jugadorNegre;
     String torn = "blanc";
+    String[] historial = new String[200];
+    int totalMoviments = 0;
     public static void main(String[] args) {
     PE07_Joc_De_Escacs p = new PE07_Joc_De_Escacs();
     p.iniciarJoc();
@@ -116,8 +118,10 @@ public void buclePartida() {
 
         if (validarMoviment(origen, desti)) {
             executarMoviment(origen, desti);
+            historial[totalMoviments++] = entrada;
             canviarTorn();
             imprimirTauler();
+            mostrarHistorial();
         } else {
             System.out.println("Moviment no permes");
         }
@@ -194,5 +198,12 @@ public void executarMoviment(int[] origen, int[] desti) {
 public void canviarTorn() {
     if (torn.equals("blanc")) torn = "negre";
     else torn = "blanc";
+}
+
+public void mostrarHistorial() {
+    System.out.println("Historial de moviments:");
+    for(int i = 0; i < totalMoviments; i++) {
+        System.out.println((i + 1) + ". " + historial[i]);
+    }
 }
 }
